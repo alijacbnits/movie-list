@@ -1,0 +1,22 @@
+<app-searchbar 
+(onSearch) = "onImageSearch($event)"
+></app-searchbar>
+
+<div  *ngIf="searchKey">
+    <div class="autocom-box" *ngFor="let item of data">
+      {{item.Title}}
+</div>
+    </div>
+<h1>Movie Lists</h1>
+<!-- <div style="overflow: scroll;" infiniteScroll (scrolled)="onScroll()"> -->
+    <div>
+    <div *ngFor="let item of data" class='newsCard news-Slide-up'>
+            <app-imgcards 
+            imgUrl = "{{item.Poster}}"
+            ></app-imgcards>
+                <div id="search_hover" class='newsCaption'>  
+                    <p>{{item.Title}}</p> 
+                    <p>{{item.imdbID}}</p> 
+                </div>
+    </div>
+</div>
